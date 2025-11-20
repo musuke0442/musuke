@@ -10,11 +10,9 @@ class DiscordStatusManager {
                     avatar: 'discordAvatar',
                     displayName: 'discordDisplayName',
                     username: 'discordUsername',
-                    status: 'discordStatus',
-                    activity: 'discordActivity'
+                    status: 'discordStatus'
                 },
-                lastStatus: null,
-                lastActivity: null
+                lastStatus: null
             },
             {
                 id: '958660558528331787', // 2つ目のユーザーID
@@ -23,11 +21,9 @@ class DiscordStatusManager {
                     avatar: 'discordAvatar2',
                     displayName: 'discordDisplayName2',
                     username: 'discordUsername2',
-                    status: 'discordStatus2',
-                    activity: 'discordActivity2'
+                    status: 'discordStatus2'
                 },
-                lastStatus: null,
-                lastActivity: null
+                lastStatus: null
             }
         ];
         
@@ -130,57 +126,9 @@ class DiscordStatusManager {
         // ステータス表示を更新
         this.updateStatusDisplay(elements.status, discord_status, statusColors);
 
-        // アクティビティ情報を更新
-        const activityElement = elements.activity ? document.getElementById(elements.activity) : null;
-        if (activities && activities.length > 0 && activityElement) {
-            this.updateActivityDisplay(activityElement, activities[0]);
-        } else if (activityElement) {
-            this.clearActivityDisplay(activityElement);
-        }
+        // アクティビティ表示は削除
     }
 
-    updateActivityDisplay(activityElement, activity) {
-        if (activityElement) {
-            let activityText = '';
-
-            switch (activity.type) {
-                case 0: // ゲーム
-                    activityText = `🎮 ${activity.name}${activity.details ? ' - ' + activity.details : ''}`;
-                    break;
-                case 1: // ストリーミング
-                    activityText = `🔴 ${activity.name}${activity.details ? ' - ' + activity.details : ''}`;
-                    break;
-                case 2: // 音楽（Spotifyなど）
-                    activityText = `🎵 ${activity.name}${activity.details ? ' - ' + activity.details : ''}`;
-                    if (activity.assets && activity.assets.large_image) {
-                        const coverId = activity.assets.large_image.replace('spotify:', '');
-                        activityText += `\n🖼️ https://i.scdn.co/image/${coverId}`;
-                    }
-                    break;
-                case 3: // チーム参加
-                    activityText = `👥 ${activity.name}${activity.details ? ' - ' + activity.details : ''}`;
-                    break;
-                case 4: // ストリーミング（別タイプ）
-                    activityText = `🔴 ${activity.name}${activity.details ? ' - ' + activity.details : ''}`;
-                    break;
-                case 5: // 競技
-                    activityText = `🏆 ${activity.name}${activity.details ? ' - ' + activity.details : ''}`;
-                    break;
-                default:
-                    activityText = `📱 ${activity.name}${activity.details ? ' - ' + activity.details : ''}`;
-            }
-
-            activityElement.textContent = activityText;
-            activityElement.style.display = 'block';
-        }
-    }
-
-    clearActivityDisplay(activityElement) {
-        if (activityElement) {
-            activityElement.textContent = '';
-            activityElement.style.display = 'none';
-        }
-    }
 
     centerProfileContent() {
         if (this.profileElement) {
