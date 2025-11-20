@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>musuke</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="sns-section.css">
+</head>
+<body>
+    <div class="container">
+        <main class="main">
+            <!-- 上段: Discordプロフィール2つと音楽プレイヤーを横並び -->
+            <div class="top-section">
+                <!-- 左側: 2つのDiscordプロフィールを横並び -->
+                <div class="left-section" style="display: flex; gap: 20px;">
+                    <section class="discord-profile-section" style="flex: 1;">
+                        <div class="discord-profile" id="discordProfile">
+                            <div class="discord-avatar">
+                                <img src="https://via.placeholder.com/80x80/4A90E2/FFFFFF?text=D" alt="Discordアバター" id="discordAvatar">
+                                <img src="images/discord-logo.png" alt="Discord" class="discord-logo" style="width: 16px !important; height: 16px !important;">
+                            </div>
+                            <div class="discord-info">
+                                <h3 class="discord-display-name" id="discordDisplayName"></h3>
+                                <p class="discord-username" id="discordUsername"></p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- 2つ目のDiscordプロフィールセクション -->
+                    <section class="discord-profile-section" style="flex: 1;">
+                        <div class="discord-profile" id="discordProfile2">
+                            <div class="discord-avatar">
+                                <img src="https://via.placeholder.com/80x80/4A90E2/FFFFFF?text=D2" alt="Discordアバター2" id="discordAvatar2">
+                                <img src="images/discord-logo.png" alt="Discord" class="discord-logo" style="width: 16px !important; height: 16px !important;">
+                            </div>
+                            <div class="discord-info">
+                                <h3 class="discord-display-name" id="discordDisplayName2"></h3>
+                                <p class="discord-username" id="discordUsername2"></p>
+                                <p class="discord-activity" id="discordActivity2"></p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- SNSリンクセクション -->
+                    <section class="sns-section">
+                        <div class="sns-buttons" id="snsButtons">
+                            <div class="tooltip-container">
+                                <a href="https://instagram.com/m.s.k_vii" class="sns-btn instagram" target="_blank" rel="noopener noreferrer" data-tooltip="m.s.k_vii">
+                                    <svg class="sns-icon" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4H7.6m9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8A1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5a5 5 0 0 1-5 5a5 5 0 0 1-5-5a5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3a3 3 0 0 0 3 3a3 3 0 0 0 3-3a3 3 0 0 0-3-3z"/>
+                                    </svg>
+                                    <span>m.s.k_vii</span>
+                                </a>
+                                <span class="tooltip">m.s.k_vii</span>
+                            </div>
+                            <div class="tooltip-container">
+                                <a href="https://instagram.com/n.uxf" class="sns-btn instagram" target="_blank" rel="noopener noreferrer" data-tooltip="n.uxf">
+                                    <svg class="sns-icon" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4H7.6m9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8A1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5a5 5 0 0 1-5 5a5 5 0 0 1-5-5a5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3a3 3 0 0 0 3 3a3 3 0 0 0 3-3a3 3 0 0 0-3-3z"/>
+                                    </svg>
+                                    <span>n.uxf</span>
+                                </a>
+                                <span class="tooltip">n.uxf</span>
+                            </div>
+                            <div class="tooltip-container">
+                                <a href="https://note.com/msk_vii" class="sns-btn note" target="_blank" rel="noopener noreferrer" data-tooltip="note">
+                                    <svg class="sns-icon" viewBox="0 0 24 24" fill="currentColor" style="font-weight: bold; font-family: Arial, sans-serif;">
+                                        <text x="50%" y="70%" text-anchor="middle" font-size="20">n</text>
+                                    </svg>
+                                </a>
+                                <span class="tooltip">note</span>
+                            </div>
+
+                        </div>
+                    </section>
+
+                </div>
+
+                <!-- 音楽プレイヤー（右側） -->
+                <section class="music-player-section">
+                    <div class="music-player">
+                        <div class="player-info">
+                            <div class="song-info">
+                                <h4 id="song-title">Roundtable Rival</h4>
+                            </div>
+                            <div class="player-controls">
+                                <button id="prev-btn" class="control-btn">⏮</button>
+                                <button id="play-btn" class="control-btn play-btn">▶</button>
+                                <button id="next-btn" class="control-btn">⏭</button>
+                            </div>
+                            <div class="player-progress">
+                                <span id="current-time">0:00</span>
+                                <input type="range" id="progress-bar" min="0" value="0">
+                                <span id="duration">0:00</span>
+                            </div>
+                            <div class="volume-control">
+                                <span>🔊</span>
+                                <input type="range" id="volume-bar" min="0" max="100" value="10">
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            </div>
+
+            <!-- 時間表示ウィジェット -->
+            <div class="clock-widget">
+                <div class="clock-header">
+                    <button id="toggleClockBtn" class="toggle-btn" title="開閉">▼</button>
+                </div>
+                <div class="clock-content">
+                    <div class="clock-display">
+                        <div class="time" id="currentTime">00:00:00</div>
+                        <div class="date-info">
+                            <div class="date" id="currentDate">2025/01/17</div>
+                            <div class="weekday" id="currentWeekday">Friday</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- スクリプトの読み込み -->
+    <script src="js/clock.js"></script>
+    <script>
+        // グローバルな設定
+        window.appConfig = {
+            debug: true
+        };
+        
+        // スクリプトの読み込みが完了したか確認
+        function checkDependencies() {
+            if (window.ClockWidget) {
+                console.log('ClockWidget is ready');
+                // 必要に応じてここで追加の初期化を行う
+            } else {
+                console.error('ClockWidget is not loaded');
+            }
+        }
+        
+        // ページが読み込まれたら確認
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', checkDependencies);
+        } else {
+            checkDependencies();
+        }
+    </script>
+    
+    <!-- スクリプトの読み込み -->
+    <script src="js/clock.js" onload="console.log('clock.js loaded')"></script>
+    <script src="discord.js" onload="console.log('discord.js loaded')"></script>
+    <script>
+
+        // 音楽プレイヤー機能
+        class MusicPlayer {
+            constructor() {
+                this.audio = null;
+                this.isPlaying = false;
+                this.currentSongIndex = 0;
+                this.songs = [];
+                this.isUserSeeking = false; // ユーザーがシーク操作中かどうかのフラグ
+
+                this.initializePlayer();
+            }
+
+            async initializePlayer() {
+                await this.loadMusicFiles();
+                this.setupEventListeners();
+                if (this.songs.length > 0) {
+                    this.updateSongInfo();
+                    this.initializeAudio();
+                } else {
+                    this.showNoMusicMessage();
+                }
+            }
+
+            async loadMusicFiles() {
+                try {
+                    // 既知のMP3ファイルリスト（自動検出が機能しない場合のフォールバック）
+                    this.songs = [
+                        {
+                            title: "Por Una Cabeza",
+                            src: "Assets/music/Por Una Cabeza.mp3"
+                        },
+                        {
+                            title: "Roundtable Rival",
+                            src: "Assets/music/Roundtable Rival.mp3"
+                        },
+                        {
+                            title: "Bad Apple!!",
+                            src: "Assets/music/【東方】Bad Apple!! ＰＶ【影絵】.mp3"
+                        },
+                        {
+                            title: "モエチャッカファイア",
+                            src: "Assets/music/【ゼンゼロ】モエチャッカファイア   エレン・ジョー（CV：若山詩音）cover.mp3"
+                        },
+                        {
+                            title: "Pixel Dream",
+                            src: "Assets/music/Snail's House - Pixel Dream.mp3"
+                        }
+                    ];
+
+                    console.log('音楽ファイルリスト:', this.songs);
+                } catch (error) {
+                    console.log('音楽ファイルの読み込みエラー:', error);
+                    this.songs = [];
+                }
+            }
+
+            extractTitleFromPath(path) {
+                // パスからファイル名を抽出してタイトルにする
+                const filename = path.split('/').pop();
+                return filename.replace('.mp3', '').replace(/[-_]/g, ' ');
+            }
+
+            initializeAudio() {
+                if (this.audio) {
+                    this.audio.remove();
+                }
+
+                this.audio = new Audio();
+                this.audio.volume = 0.1; // 初期音量を10%に設定（かなり小さく）
+
+                this.audio.addEventListener('loadedmetadata', () => {
+                    document.getElementById('duration').textContent = this.formatTime(this.audio.duration);
+                    document.getElementById('progress-bar').max = this.audio.duration;
+                });
+
+                this.audio.addEventListener('timeupdate', () => {
+                    document.getElementById('progress-bar').value = this.audio.currentTime;
+                    document.getElementById('current-time').textContent = this.formatTime(this.audio.currentTime);
+                });
+
+                this.audio.addEventListener('ended', () => {
+                    this.nextSong();
+                });
+
+                this.loadSong(this.currentSongIndex);
+            }
+
+            loadSong(index) {
+                if (this.songs.length === 0 || index >= this.songs.length) return;
+
+                const song = this.songs[index];
+                this.audio.src = song.src;
+                this.audio.load();
+            }
+
+            setupEventListeners() {
+                const playBtn = document.getElementById('play-btn');
+                const prevBtn = document.getElementById('prev-btn');
+                const nextBtn = document.getElementById('next-btn');
+                const progressBar = document.getElementById('progress-bar');
+                const volumeBar = document.getElementById('volume-bar');
+
+                playBtn.addEventListener('click', () => this.togglePlay());
+                prevBtn.addEventListener('click', () => this.previousSong());
+                nextBtn.addEventListener('click', () => this.nextSong());
+                progressBar.addEventListener('input', (e) => this.seekTo(e.target.value));
+                progressBar.addEventListener('mousedown', () => this.isUserSeeking = true);
+                progressBar.addEventListener('mouseup', () => this.isUserSeeking = false);
+                volumeBar.addEventListener('change', (e) => this.setVolume(e.target.value));
+            }
+
+            updateSongInfo() {
+                if (this.songs.length === 0) return;
+
+                const song = this.songs[this.currentSongIndex];
+                document.getElementById('song-title').textContent = song.title;
+            }
+
+            togglePlay() {
+                const playBtn = document.getElementById('play-btn');
+
+                if (this.isPlaying) {
+                    this.pause();
+                    playBtn.textContent = '▶';
+                } else {
+                    this.play();
+                    playBtn.textContent = '⏸';
+                }
+            }
+
+            play() {
+                if (this.audio && this.songs.length > 0) {
+                    this.audio.play();
+                    this.isPlaying = true;
+                }
+            }
+
+            pause() {
+                if (this.audio) {
+                    this.audio.pause();
+                    this.isPlaying = false;
+                }
+            }
+
+            nextSong() {
+                if (this.songs.length === 0 || this.isUserSeeking) return;
+
+                this.currentSongIndex = (this.currentSongIndex + 1) % this.songs.length;
+                this.updateSongInfo();
+                this.loadSong(this.currentSongIndex);
+                if (this.isPlaying) {
+                    this.audio.play();
+                }
+            }
+
+            previousSong() {
+                if (this.songs.length === 0) return;
+
+                this.currentSongIndex = this.currentSongIndex === 0 ? this.songs.length - 1 : this.currentSongIndex - 1;
+                this.updateSongInfo();
+                this.loadSong(this.currentSongIndex);
+                if (this.isPlaying) {
+                    this.audio.play();
+                }
+            }
+
+            seekTo(value) {
+                if (this.audio && this.audio.duration) {
+                    this.audio.currentTime = parseFloat(value);
+                }
+            }
+
+            setVolume(value) {
+                if (this.audio) {
+                    this.audio.volume = value / 100;
+                }
+            }
+
+            formatTime(seconds) {
+                if (isNaN(seconds)) return '0:00';
+
+                const mins = Math.floor(seconds / 60);
+                const secs = Math.floor(seconds % 60);
+                return `${mins}:${secs.toString().padStart(2, '0')}`;
+            }
+
+            showNoMusicMessage() {
+                document.getElementById('song-title').textContent = 'No music files available';
+            }
+        }
+
+                
+
+            // ページ読み込み時に各機能を初期化
+        document.addEventListener('DOMContentLoaded', function() {
+            new MusicPlayer();
+            new DiscordStatusManager();
+            // 時間表示ウィジェットを初期化
+            window.clockWidget = new ClockWidget();
+        });
+    </script>
+</body>
+</html>
